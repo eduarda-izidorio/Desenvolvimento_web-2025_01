@@ -1,0 +1,66 @@
+/* Definição das variáveis de cor */
+:root {
+    --primary-color: #6A5ACD; /* SlateBlue - Cor principal */
+    --primary-dark: #483D8B; /* DarkSlateBlue - Para header/footer */
+    --primary-light: #7B68EE; /* MediumSlateBlue - Para hover/accent */
+    --accent-color: #ADD8E6; /* LightBlue - Para detalhes ou CTAs secundários */
+    --background-color: #f0f4f8; /* Um cinza azulado muito claro */
+    --card-background: #ffffff;
+    --text-color: #333;
+    --text-light: #FFFFFF;
+    --border-color: #e0e0e0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex-grow: 1;
+    max-width: 1200px; /* Um pouco mais largo para conteúdo de viagem */
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  /* Estilos gerais para botões */
+  button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+  }
+  button:active:not(:disabled) {
+      transform: translateY(0);
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Adicionar estilos responsivos aqui também */
+  @media (max-width: 768px) {
+     main {
+         padding: 0 15px;
+     }
+     /* Outros ajustes */
+  }
