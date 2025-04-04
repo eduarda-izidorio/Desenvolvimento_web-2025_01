@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas com jQuery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Minha Lista de Tarefas Interativa</h1>
+        
+        <div class="input-area">
+            <input type="text" id="nova-tarefa" placeholder="Adicionar nova tarefa...">
+            <button id="adicionar-tarefa">Adicionar</button>
+        </div>
+
+        <ul id="lista-tarefas">
+            <!-- As tarefas serão adicionadas aqui pelo jQuery -->
+            <li>
+                <span>Estudar jQuery</span>
+                <button class="remover-tarefa">Remover</button>
+            </li>
+            <li>
+                <span>Entregar trabalho de Web Dev</span>
+                <button class="remover-tarefa">Remover</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Importando a biblioteca jQuery (usei um CDN, mas poderia baixar o arquivo) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+            crossorigin="anonymous"></script>
+    
+    <!-- Importando nosso script customizado (DEPOIS do jQuery) -->
+    <script src="script.js"></script> 
+</body>
+</html>

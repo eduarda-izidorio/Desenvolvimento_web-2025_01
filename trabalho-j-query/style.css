@@ -1,0 +1,163 @@
+/* Importando uma fonte mais moderna (opcional, requer conexão com a internet) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    /* Usando a fonte importada, com fallback para sans-serif */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    /* Um fundo suave, quase branco */
+    background-color: #f8f9fa; 
+    color: #343a40; /* Cor de texto principal mais escura */
+    margin: 0;
+    padding: 20px;
+    display: flex; /* Ajuda a centralizar o container */
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh; /* Garante que o body ocupe a altura toda */
+}
+
+.container {
+    max-width: 650px; /* Um pouco mais largo */
+    width: 100%; /* Ocupa a largura disponível até o max-width */
+    margin-top: 40px; /* Espaço no topo */
+    background: #ffffff; /* Fundo branco para contraste */
+    padding: 30px 40px; /* Mais preenchimento interno */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+    border-top: 5px solid #20c997; /* Detalhe superior com o tom verde azulado */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Um cinza azulado escuro para o título */
+    margin-bottom: 30px;
+    font-weight: 600; /* Fonte um pouco mais encorpada */
+}
+
+.input-area {
+    display: flex;
+    margin-bottom: 30px;
+    gap: 10px; /* Espaço entre o input e o botão */
+}
+
+#nova-tarefa {
+    flex-grow: 1;
+    padding: 12px 15px; /* Mais padding vertical */
+    border: 1px solid #ced4da; /* Borda cinza claro */
+    border-radius: 6px; /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho de fonte padrão */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+#nova-tarefa:focus {
+    border-color: #20c997; /* Muda a cor da borda ao focar */
+    box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.25); /* Sombra de foco sutil */
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+#adicionar-tarefa {
+    padding: 12px 25px; /* Padding ajustado */
+    background-color: #20c997; /* Cor principal verde azulado */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px; /* Bordas arredondadas */
+    font-size: 1rem;
+    font-weight: 400; /* Peso da fonte */
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que o texto quebre linha */
+}
+
+#adicionar-tarefa:hover {
+    background-color: #1baa80; /* Tom ligeiramente mais escuro no hover */
+}
+
+#lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-tarefas li {
+    background: #f1f3f5; /* Fundo cinza bem claro para os itens */
+    margin-bottom: 12px; /* Espaçamento entre itens */
+    padding: 15px 20px; /* Padding interno dos itens */
+    border-radius: 8px; /* Bordas arredondadas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+    border-left: 4px solid #adb5bd; /* Borda esquerda cinza por padrão */
+}
+
+#lista-tarefas li:hover {
+   transform: translateY(-2px); /* Leve efeito de elevação no hover */
+   background-color: #e9ecef; /* Fundo ligeiramente mais escuro no hover */
+}
+
+/* Estilo para tarefa concluída */
+#lista-tarefas li.concluida {
+    background-color: #e9ecef; /* Fundo um pouco diferente para concluída */
+    border-left: 4px solid #20c997; /* Muda a cor da borda esquerda para verde azulado */
+}
+
+#lista-tarefas li.concluida span {
+    text-decoration: line-through;
+    color: #6c757d; /* Cor de texto mais clara para concluída */
+    opacity: 0.8; /* Leve transparência */
+}
+
+#lista-tarefas li span {
+    cursor: pointer;
+    flex-grow: 1;
+    margin-right: 15px; /* Espaço antes do botão */
+    color: #495057; /* Cor do texto da tarefa */
+}
+
+.remover-tarefa {
+    background-color: #dc3545; /* Vermelho para ação destrutiva */
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Padding menor para botão secundário */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em; /* Fonte menor */
+    font-weight: 300; /* Fonte mais leve */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7; /* Botão fica um pouco apagado por padrão */
+}
+
+#lista-tarefas li:hover .remover-tarefa {
+    opacity: 1; /* Botão fica totalmente visível no hover do item */
+}
+
+.remover-tarefa:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+    opacity: 1; /* Garante opacidade total no hover direto */
+}
+
+/* Pequeno ajuste para telas menores (opcional) */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin-top: 20px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .input-area {
+        flex-direction: column; /* Empilha input e botão */
+        gap: 15px; /* Aumenta o espaço vertical */
+    }
+    #nova-tarefa, #adicionar-tarefa {
+        border-radius: 6px; /* Bordas iguais quando empilhados */
+        width: 100%; /* Faz ocupar toda a largura */
+        box-sizing: border-box; /* Inclui padding na largura total */
+    }
+    #adicionar-tarefa {
+        padding: 12px 15px; /* Ajusta padding do botão */
+    }
+    #lista-tarefas li {
+        padding: 12px 15px;
+    }
+}
